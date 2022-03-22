@@ -1,16 +1,5 @@
-import { PostList } from "../components/postList"
-
-export default function Home({ cafe }) {
+export default function Home({ posts }) {
   return (
-    <div>
-      <PostList posts={cafe} />
-    </div>
+    <h1>tela 1</h1>
   )
 }
-
-export async function getServerSideProps() {
-  const res = await fetch(`http://localhost:3000/api/posts`)
-  const cafe = await res.json()
-  return { props: { cafe } }
-}
-

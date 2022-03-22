@@ -2,7 +2,7 @@ import { prisma } from '../../prisma.js'
 
 async function handler(req, res) {
     try {
-        const dbres = await prisma.cafe.findMany()
+        const dbres = await prisma.posts.findMany()
         res.status(200).json(dbres)
     }
     catch (err) {
