@@ -10,10 +10,16 @@ datasource db {
   url      = "file:./dev.db"
 }
 
-model cafe {
+model posts {
   id Int @id @default(autoincrement())
-  autor String
-  titulo String 
-  texto String 
-  categoria String
+  author String
+  title String 
+  text String 
+  category String
 } 
+
+model login {
+  id Int @id @default(autoincrement())
+  user String
+  password String
+}
