@@ -1,5 +1,7 @@
-export default function Home({ posts }) {
+import { Header } from "../components/Header"
+
+export default function Home() {
   return (
-    <h1>tela 1</h1>
+    <Header />
   )
 }
