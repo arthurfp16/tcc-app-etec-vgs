@@ -30,9 +30,9 @@ export const Header = () => {
     return (
         <HeaderContainer>
             <ImageContainer>
-                <Image src={Logo} width={'100%'} height={'100%'}/>
+                <Image src={Logo} width={'100%'} height={'100%'} alt='logo' priority />
             </ImageContainer>
-            <Link href={'/'}>
+            <Link href={'/'} passHref>
                 <NextPageButton>Ler artigos mais recentes</NextPageButton>
             </Link>
         </HeaderContainer>
