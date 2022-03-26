@@ -1,8 +1,12 @@
 import { PostList } from "../components/postList"
+import { Header } from "../components/Header"
 
 export default function Home({ posts }) {
     return (
+      <>
+        <Header linkHref='/' linkText='Voltar para a home' />
         <PostList posts={ posts } />
+      </>
     )
   }
   

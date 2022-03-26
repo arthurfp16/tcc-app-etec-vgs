@@ -1,40 +1,15 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import Logo from '../img/logo.svg'
-import styled from 'styled-components'
+import { HeaderContainer, ImageContainer } from '../styles/HeaderStyle'
+import { ChangePageButton } from './ChangePageButton'
 
-const HeaderContainer = styled.header`
-    background-color: #6E8755;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    height: 78px;
-`
-
-const NextPageButton = styled.button`
-    background-color: #F89B67;
-    border: 2px solid #E45F35;
-    color: #F1F1F1;
-    border-radius: 15px;
-    padding: 3px 10px;
-`
-
-const ImageContainer = styled.div`
-    width: 60px;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-`
-
-export const Header = () => {
+export const Header = ({ linkHref, linkText }) => {
     return (
         <HeaderContainer>
             <ImageContainer>
                 <Image src={Logo} width={'100%'} height={'100%'} alt='logo' priority />
             </ImageContainer>
-            <Link href={'/'} passHref>
-                <NextPageButton>Ler artigos mais recentes</NextPageButton>
-            </Link>
+            <ChangePageButton href={linkHref} text={linkText}/>
         </HeaderContainer>
     )
 }

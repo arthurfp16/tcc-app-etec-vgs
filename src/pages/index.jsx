@@ -7,7 +7,7 @@ export default function Home() {
     <Head>
       <title>My page title</title>
     </Head>
-    <Header />
+    <Header linkHref='/posts' linkText='Ler artigos mais recentes' />
     </>
   )
 }
