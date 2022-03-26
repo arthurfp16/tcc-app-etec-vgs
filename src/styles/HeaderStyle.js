@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
-    background-color: #6E8755;
+    background-color: ${props => props.theme.colors.darkGreen};
     display: flex;
     align-items: center;
     justify-content: space-around;
