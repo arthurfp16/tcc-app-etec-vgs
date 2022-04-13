@@ -1,11 +1,13 @@
-import { PostCardContent, PostCardTitle } from '../styles/PostCardStyle'
+import { PostCardContent, PostCardTitle, PostCardText, PostCardTime, PostCardImage  } from '../styles/PostCardStyle'
+import image from "../img/img1.png"
 
-
-export const PostCard = (img, author, title, text, date) => {
+export const PostCard = ({ img, title, time, author, children } ) => {
     return (
         <PostCardContent>
-        {/* img */ }
-        <PostCardTitle>Post Card test</PostCardTitle>
+        <PostCardImage src={image} />
+        <PostCardTitle>{title}</PostCardTitle>
+        <PostCardText>{children}</PostCardText>
+        <PostCardTime dateTime={time.replaceAll('/', '-')} >{time}</PostCardTime>
         </PostCardContent>
     )
 }

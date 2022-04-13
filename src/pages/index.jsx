@@ -1,6 +1,8 @@
-const Home = () => {
+import { PostCard } from "../components/PostCard"
+const date = new Date()
+const Home = () => {   
     return(
-        <h1>home page test</h1>
+        <PostCard title="Title" time={date.toLocaleDateString()}>Batata</PostCard> 
     )
 }
 
