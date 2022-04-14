@@ -1,13 +1,16 @@
-import { PostCardContent, PostCardTitle, PostCardText, PostCardTime, PostCardImage  } from '../styles/PostCardStyle'
-import image from "../img/img1.png"
+import Image from "next/image"
+import { PostCardContent, PostCardText, PostCardTime, PostCardTitle, PostCardAuthor, CardFooter } from '../styles/PostCardStyle'
 
-export const PostCard = ({ img, title, time, author, children } ) => {
+export const PostCard = ({ imgSrc, imgAlt, title, time, author, children } ) => {
     return (
         <PostCardContent>
-        <PostCardImage src={image} />
-        <PostCardTitle>{title}</PostCardTitle>
-        <PostCardText>{children}</PostCardText>
-        <PostCardTime dateTime={time.replaceAll('/', '-')} >{time}</PostCardTime>
+            {/* <Image src={imgSrc} alt={imgAlt} layout='responsive' objectFit="contain" quality={100} sizes='10' width='100' /> */}
+            <PostCardTitle>{title}</PostCardTitle>
+            <PostCardText>{children}</PostCardText>
+            <CardFooter>
+                <PostCardTime dateTime={time.replaceAll('/', '-')} >{time}</PostCardTime>
+                <PostCardAuthor>Batato bot</PostCardAuthor>
+            </CardFooter>
         </PostCardContent>
     )
 }
