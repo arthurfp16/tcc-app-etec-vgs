@@ -5,7 +5,7 @@ import styled from "styled-components"
 
 export const PostCardContent = styled.article`
     width: 100%;
-    max-width: ${props => props.mainCard ? '308px': '233px'};
+    max-width: ${props => props.highlighted ? '308px': '233px'};
     display: flex;
     flex-direction: column;
     background-color: #F1F1F1; /* change for an external theme */
