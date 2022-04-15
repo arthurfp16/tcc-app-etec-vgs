@@ -4,13 +4,15 @@ import { PostCardContent, PostCardText, PostCardTime, PostCardTitle, PostCardAut
 export const PostCard = ({ imgSrc, imgAlt, title, time, author, children } ) => {
     return (
         <PostCardContent>
-            {/* <Image src={imgSrc} alt={imgAlt} layout='responsive' objectFit="contain" quality={100} sizes='10' width='100' /> */}
-            <PostCardTitle>{title}</PostCardTitle>
-            <PostCardText>{children}</PostCardText>
-            <CardFooter>
-                <PostCardTime dateTime={time.replaceAll('/', '-')} >{time}</PostCardTime>
-                <PostCardAuthor>Batato bot</PostCardAuthor>
-            </CardFooter>
+            <Image src={imgSrc} alt={imgAlt} quality='100' height='136' />
+            <div>
+                <PostCardTitle>{title}</PostCardTitle>
+                <PostCardText>{children}</PostCardText>
+                <CardFooter>
+                    <PostCardTime dateTime={time.replaceAll('/', '-')} >{time}</PostCardTime>
+                    <PostCardAuthor>{author}</PostCardAuthor>
+                </CardFooter>
+            </div>
         </PostCardContent>
     )
 }

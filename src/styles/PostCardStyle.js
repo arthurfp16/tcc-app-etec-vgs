@@ -5,7 +5,6 @@ import styled from "styled-components"
 
 export const PostCardContent = styled.article`
     width: 100%;
-    padding: 26px;
     max-width: ${props => props.mainCard ? '308px': '233px'};
     display: flex;
     flex-direction: column;
@@ -13,6 +12,13 @@ export const PostCardContent = styled.article`
     gap: 16px;
     border-bottom: 4px solid green;
     border-radius: 2.3px;
+
+    div{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 0px 26px 16px 26px;
+    }
 `
 export const PostCardTitle = styled.h2`
     text-align: center;
