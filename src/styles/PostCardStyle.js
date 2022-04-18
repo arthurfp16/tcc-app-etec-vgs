@@ -4,42 +4,59 @@ import React from "react"
 import styled from "styled-components"
 
 export const PostCardContent = styled.article`
-    width: 100%;
-    max-width: ${props => props.highlighted ? '308px': '233px'};
-    display: flex;
-    flex-direction: column;
-    background-color: #F1F1F1; /* change for an external theme */
-    gap: 16px;
+    
+    background-color: ${props => props.theme.colors.white};
+
     border-bottom: 4px solid green;
     border-radius: 2.3px;
 
+    box-shadow: 2px 4px 4px #00000040;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    
+    width: 100%;
+    max-width: ${props => props.highlighted ? '308px': '233px'};
+
+    margin-top: 26px;
+    
     div{
         display: flex;
         flex-direction: column;
         gap: 16px;
+        
         padding: 0px 26px 16px 26px;
     }
 `
 export const PostCardTitle = styled.h2`
-    text-align: center;
+
     font-size: 14px;
     font-weight: bold;
+
+    text-align: center;
+    
     width: 100%;
 `
 
 export const PostCardText = styled.p`
     width: 100%;
+    text-align: left;
 `
-
-const TextIconContainer = styled.span`
-    display: flex;
-    gap: 6px;
-`
-
 export const CardFooter = styled.footer`
     display: flex;
     justify-content: space-between;
 `
+
+const TextIconContainer = styled.span`
+    display: grid;
+    grid-template-columns: 14px auto;
+    height: 14px;
+    align-items: center;
+    justify-items: center;
+    column-gap: 3px;
+`
+
 export const PostCardTime = ({children}) => {
     return (
         <TextIconContainer>
