@@ -18,6 +18,10 @@ a {
   margin: 0;
   box-sizing: border-box;
 }
+
+main{
+  margin-bottom: 93px;
+}
 `
 
 export const theme = {
@@ -30,14 +34,5 @@ export const theme = {
     darkOrange: '#E45F35',
     black: '#0D0D0D'
   },
-  sizes: {
-    number: {
-      footerHeigth: 52
-    },
-    px: {
-      footerHeigth: '52 px'
-    }
-    
-  }
 }
 

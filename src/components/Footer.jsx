@@ -27,7 +27,7 @@ const FooterContainer = styled.footer`
     width: 100%;
     background-color: ${props => props.theme.colors.darkGreen};
     padding: 10px 0px;
-    max-height: ${props => props.theme.sizes.px.footerHeigth}; 
+    max-height: 52px; 
 `
 
 export const Footer = ({ }) => {
