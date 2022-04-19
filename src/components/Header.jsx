@@ -2,7 +2,7 @@ import Image from 'next/image'
 import logo from '../../public/logo.svg'
 import { HeaderContainer, ImageContainer } from '../styles/HeaderStyle'
 
-export const Header = ({ linkHref, linkText }) => {
+export const Header = () => {
     return (
         <HeaderContainer>
             <ImageContainer>
