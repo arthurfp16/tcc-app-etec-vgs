@@ -4,14 +4,14 @@ import styled from "styled-components"
 import homeIcon from '../../public/home.svg'
 import aboutIcon from '../../public/Carbs.svg'
 import { useRouter } from "next/router"
+import React from 'react'
 
 const ImageStyled = styled(Image)`
-    opacity: ${props => props.dissable ? '0.4' : '1'};
+    opacity: ${props => props.dissable == 'true' ? '0.4' : '1'};
 `
 
-export const IconLink = ({ href, imgSrc, imgAlt, dissable = false }) => {
+const IconLink = ({ href, imgSrc, imgAlt, dissable= "false" }) => {
     return (
-        // eslint-disable-next-line @next/next/link-passhref
         <Link href={href}>
             <ImageStyled src={imgSrc} alt={imgAlt} dissable={dissable} />
         </Link>
@@ -37,39 +37,29 @@ export const Footer = ({ }) => {
             {
                 router.pathname == '/' ?
                     <IconLink
-                        href={'./'}
+                        href={'/'}
                         imgSrc={homeIcon}
-                        alt='link para a pagina home com um icone de uma casa com fundo trasparente e contorno de cor preta'
-                        dissable />
+                        alt='link desabilitado para a pagina home com um icone de uma casa com fundo trasparente e contorno de cor cinza'
+                        dissable="true" />
                     :
                     <IconLink
-                        href={'./'}
+                        href={'/'}
                         imgSrc={homeIcon}
                         alt='link para a pagina home com um icone de uma casa com fundo trasparente e contorno de cor preta' />
             }
             {
                 router.pathname == '/sobre' ?
                     <IconLink
-                        href={'./'}
+                        href={'/'}
                         imgSrc={aboutIcon}
-                        alt='link para a pagina sobre com um icone com um ramo e tres folhas com fundo trasparente e contorno de cor preta'
-                        dissable />
+                        alt='link desabilitado para a pagina sobre com um icone com um ramo e tres folhas com fundo trasparente e contorno de cor cinza'
+                        dissable="true" />
                     :
                     <IconLink
-                        href={'./'}
+                        href={'/'}
                         imgSrc={aboutIcon}
                         alt='link para a pagina sobre com um icone com um ramo e tres folhas com fundo trasparente e contorno de cor preta' />
             }
-
         </FooterContainer>
     )
 }
-
-
-/* 
-
-    <IconLink href={'./'} imgSrc={homeIcon} alt='link para a pagina home com um icone de uma casa com fundo trasparente e contorno de cor preta'/>
-
-    <IconLink href={'./'} imgSrc={aboutIcon} alt='link para a pagina sobre com um icone com um ramo e tres folhas com fundo trasparente e contorno de cor preta'/> 
-
-*/
