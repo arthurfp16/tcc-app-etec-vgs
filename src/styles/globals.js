@@ -2,10 +2,11 @@ import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
   html, body {
+  font-size: 12px;
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Roboto', sans-serif;
+  background-color: #F1F1F1;
 }
 
 a {
@@ -21,12 +22,22 @@ a {
 
 export const theme = {
   colors: {
-    branco: '#F1F1F1',
+    white: '#F1F1F1',
+    white100: '#EAEAEA',
     darkGreen: '#6E8755',
     lightGreen: '#CDE6B4',
     lightOrange: '#F89B67',
     darkOrange: '#E45F35',
     black: '#0D0D0D'
   },
+  sizes: {
+    number: {
+      footerHeigth: 52
+    },
+    px: {
+      footerHeigth: '52 px'
+    }
+    
+  }
 }
 

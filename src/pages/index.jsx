@@ -1,37 +1,66 @@
+import { PostCard } from "../components/PostCard"
+import styled from 'styled-components'
+import image from "../../public/img2.png"
 import { Header } from "../components/Header"
-import { MotivationalPhrase } from "../components/motivationalPhrase"
-import Head from 'next/head'
-import { SectionWithImage } from "../components/SectionWithImage"
-import { MainStyled } from "../styles/MainStyled"
-export default function Home() {
-  return (
-    <>
-      <Head>
-        <title>My page title</title>
-      </Head>
+import { Footer } from "../components/Footer.jsx"
 
-      <Header linkHref='/posts' linkText='Ler artigos mais recentes' />
-      <MotivationalPhrase />
+const HomeMain = styled.main`
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background-color: ${props => props.theme.colors.white100};
+        margin-bottom:  ${props => props.theme.sizes.number.footerHeigth + 41 + 'px'};
 
-      <MainStyled>
-        <SectionWithImage>
-          O Cerrado é um bioma de formações vegetais constituído de uma união de paisagens que passam entre ecossistemas campestres, ciliares, florestais e rupestres. Possuindo uma grande biodiversidade animal e vegetal.
-        </SectionWithImage>
+        section{
+            margin-top: 41px;
+        }
+`
+const Title = styled.h2`
+    font-size: 23px;
+`
 
-        <SectionWithImage>
-          A flora conta com aproximadamente 13 mil espécies, cada uma com  suas próprias características.
-        </SectionWithImage>
 
-        <SectionWithImage>
-          Em relação a fauna, o cerrado é reconhecido pela riquíssima concentração de mamíferos de médio porte, aves e incetos.
-        </SectionWithImage>
+const date = new Date()
 
-        <p>
-          Com tudo isso o cerrado é repleto de interações estas comprendem desde as relações alimentares, medicina popular, religiosas, habitações(antigamente), conhecimentos tradicionais(cultura), e identidade para com a paisagem.
-        </p>
-
-      </MainStyled>
-
-    </>
-  )
+const Home = () => {
+    return (
+        <>
+            <Header linkHref='/posts' linkText='Ler artigos mais recentes' />
+            <HomeMain>
+                <section>
+                    <Title>
+                        Destaque
+                    </Title>
+                    <PostCard
+                        title="TRATAMENTO DE EFLUENTES INDUSTRIAIS E CHORUME DE ATERRO SANITÁRIO"
+                        imgSrc={image}
+                        imgAlt='Arvore meio dia cerrado'
+                        time={date.toLocaleDateString()}
+                        author='batata baroa'
+                        highlighted
+                    >
+                        Determinações legais cada vez mais rígidas, o desejo de consolidar uma imagem positiva no mercado e a conscientização no que diz respeito ao devido tratamento de efluentes industriais e chorume de aterro sanitário que tem levado gestores a buscarem soluções eficazes para lidar com todos os requisitos da atividade.
+                    </PostCard>
+                </section>
+                <section>
+                    <Title>
+                        mais artigos
+                    </Title>
+                    <PostCard
+                        title="TRATAMENTO DE EFLUENTES INDUSTRIAIS E CHORUME DE ATERRO SANITÁRIO"
+                        imgSrc={image}
+                        imgAlt='Arvore meio dia cerrado'
+                        time={date.toLocaleDateString()}
+                        author='batata baroa'
+                    >
+                        Determinações legais cada vez mais rígidas, o desejo de consolidar uma imagem positiva no mercado e a conscientização no que diz respeito ao devido tratamento de efluentes industriais e chorume de aterro sanitário que tem levado gestores a buscarem soluções eficazes para lidar com todos os requisitos da atividade.
+                    </PostCard>
+                </section>
+            </HomeMain>
+            <Footer />
+        </>
+    )
 }
+
+export default Home
