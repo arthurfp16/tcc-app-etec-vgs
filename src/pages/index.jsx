@@ -10,6 +10,7 @@ const HomeMain = styled.main`
         align-items: center;
         text-align: center;
         background-color: ${props => props.theme.colors.white100};
+        
         section{
             margin-top: 41px;
         }

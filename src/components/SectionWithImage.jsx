@@ -1,11 +1,35 @@
 import Image from "next/image"
-import img1 from '../img/img1.png'
+import styled from "styled-components"
 
-export const SectionWithImage = ({ children }) => {
+const Container = styled.div`
+    display: flex;
+    position: relative;
+    flex-direction:  ${props => props.flexDirection ? props.flexDirection : 'row'};
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 26px;
+    height:  ${props => props.flexDirection == 'column-reverse' ? '170px' : '144px'};
+
+    p, span {
+        position: relative;
+        width: ${props => props.flexDirection == 'column-reverse' ? '100%' : '50%'};
+        height: 100%;
+    }
+    p {
+        height: ${props => props.flexDirection == 'column-reverse' ? '40%' : 'fit-content'};
+    }
+`
+
+export const ImageContainer = ({ children, imgSrc = undefined, imgAlt, containerFlexDirection }) => {
     return (
-        <>
-            <Image src={img1} alt='Imagem com uma arvore nativa do cerrado em um ambiente aberto com sol e poucas nuvems' />
-            <p>{children}</p>
-        </>
+        <Container flexDirection={containerFlexDirection}>
+            <span>
+                {imgSrc ? <Image src={imgSrc} layout='fill' objectFit='fill' alt={imgAlt} /> : null}
+            </span>
+            <p>
+                {children}
+            </p>
+        </Container>
     )
 }

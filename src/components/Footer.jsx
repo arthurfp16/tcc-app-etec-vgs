@@ -37,7 +37,7 @@ export const Footer = ({ }) => {
             {
                 router.pathname == '/' ?
                     <IconLink
-                        href={'/'}
+                        href={''}
                         imgSrc={homeIcon}
                         alt='link desabilitado para a pagina home com um icone de uma casa com fundo trasparente e contorno de cor cinza'
                         dissable="true" />
@@ -50,13 +50,13 @@ export const Footer = ({ }) => {
             {
                 router.pathname == '/sobre' ?
                     <IconLink
-                        href={'/'}
+                        href={''}
                         imgSrc={aboutIcon}
                         alt='link desabilitado para a pagina sobre com um icone com um ramo e tres folhas com fundo trasparente e contorno de cor cinza'
                         dissable="true" />
                     :
                     <IconLink
-                        href={'/'}
+                        href={'/sobre'}
                         imgSrc={aboutIcon}
                         alt='link para a pagina sobre com um icone com um ramo e tres folhas com fundo trasparente e contorno de cor preta' />
             }
