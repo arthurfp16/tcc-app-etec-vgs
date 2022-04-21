@@ -21,6 +21,7 @@ a {
 
 main{
   margin-bottom: 93px;
+  padding: 0px 26px;
 }
 `
 

@@ -5,7 +5,6 @@ import styled from "styled-components"
 import img1 from '../../public/img1.png'
 
 const PostsMain = styled.main`
-  padding: 0px 26px;
   h1{
     text-align: center;
     margin-top: 41px;
