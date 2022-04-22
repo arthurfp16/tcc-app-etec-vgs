@@ -14,6 +14,7 @@ export const Author = styled.p`
     max-width: 670px;
     width: 100%;
     text-align: right;
+    font-size: 14px;
 `
 export const Text = styled.p`
     max-width: 670px;

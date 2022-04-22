@@ -32,7 +32,7 @@ export const theme = {
     darkGreen: '#6E8755',
     lightGreen: '#CDE6B4',
     lightOrange: '#F89B67',
-    darkOrange: '#E45F35',
+    darkOrange: '#A64208',
     black: '#0D0D0D'
   },
 }

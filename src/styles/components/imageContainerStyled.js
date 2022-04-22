@@ -1,7 +1,6 @@
-import Image from "next/image"
-import styled from "styled-components"
+import styled from 'styled-components'
 
-const Container = styled.div`
+export const Container = styled.div`
     display: flex;
     position: relative;
     flex-direction:  ${props => props.flexDirection ? props.flexDirection : 'row'};
@@ -20,16 +19,3 @@ const Container = styled.div`
         height: ${props => props.flexDirection == 'column-reverse' ? '40%' : 'fit-content'};
     }
 `
-
-export const ImageContainer = ({ children, imgSrc = undefined, imgAlt, containerFlexDirection }) => {
-    return (
-        <Container flexDirection={containerFlexDirection}>
-            <span>
-                {imgSrc ? <Image src={imgSrc} layout='fill' objectFit='fill' alt={imgAlt} /> : null}
-            </span>
-            <p>
-                {children}
-            </p>
-        </Container>
-    )
-}

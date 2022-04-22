@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { PostCardContent, PostCardText, PostCardTime, PostCardTitle, PostCardAuthor, CardFooter } from '../styles/PostCardStyle'
+import { PostCardContent, PostCardText, PostCardTime, PostCardTitle, PostCardAuthor, CardFooter } from '../styles/components/postCardStyle'
 import Link from 'next/link'
 
 export const PostCard = ({ linkHref = './', imgSrc, imgAlt, title, time, author, children, highlighted = null }) => {
