@@ -55,6 +55,8 @@ const TextIconContainer = styled.span`
     align-items: center;
     justify-items: center;
     column-gap: 3px;
+    font-size: 12px;
+    text-transform: capitalize;
 `
 
 export const PostCardTime = ({children}) => {

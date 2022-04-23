@@ -2,9 +2,9 @@ import Image from "next/image"
 import { PostCardContent, PostCardText, PostCardTime, PostCardTitle, PostCardAuthor, CardFooter } from '../styles/components/postCardStyle'
 import Link from 'next/link'
 
-export const PostCard = ({ linkHref = './', imgSrc, imgAlt, title, time, author, children, highlighted = null }) => {
+export const PostCard = ({ href = './', imgSrc, imgAlt, title, time, author, children, highlighted = null }) => {
     return (
-        <Link href={linkHref}>
+        <Link href={href}>
             <PostCardContent highlighted={highlighted}>
                 <Image src={imgSrc} alt={imgAlt} quality='100' height='136' />
                 <div>
@@ -12,7 +12,7 @@ export const PostCard = ({ linkHref = './', imgSrc, imgAlt, title, time, author,
                     <PostCardText>{children}</PostCardText>
                     <CardFooter>
                         <PostCardTime dateTime={time.replaceAll('/', '-')} >{time}</PostCardTime>
-                        <PostCardAuthor>{author}</PostCardAuthor>
+                        <PostCardAuthor>{String(author).toLowerCase()}</PostCardAuthor>
                     </CardFooter>
                 </div>
             </PostCardContent>

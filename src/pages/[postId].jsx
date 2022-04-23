@@ -38,9 +38,15 @@ export default function Home() {
         </ImageStyledContainer>
 
       </PostMain>
-
       <Footer />
     </>
   )
 }
 
+export async function getServerSideProps() {
+  const res = await fetch('http://localhost:3000/api/post')
+  const post = await res.json()
+  return {
+      props: { post }
+  }
+}
