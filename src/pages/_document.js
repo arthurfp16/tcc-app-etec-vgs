@@ -27,9 +27,7 @@ export default class MyDocument extends Document {
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin='true' />
           <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
 
-        <meta name='description' content='Blog, para a consientizasão da população sobre o cerrado com enfaze na cidade de vargem grande do sul do estado de São paulo.' />
-
-          <title>Blog cerrado vgs</title>
+          <meta name='description' content='Blog, para a consientizasão da população sobre o cerrado com enfaze na cidade de vargem grande do sul do estado de São paulo.' />
         </Head>
         <body>
           <Main />

@@ -2,8 +2,10 @@ import { prisma } from '../../prisma.js'
 
 async function handler(req, res) {
     try {
-        const dbres = await prisma.posts.findMany()
-        res.status(200).json(dbres)
+        if(req.method == 'GET') {
+            const dbPostData = await prisma.posts.findMany()
+            res.status(200).json(dbPostData)
+        }
     }
     catch (err) {
         res.status(500).json({ statusCode: 500, mensage: err.mensage })

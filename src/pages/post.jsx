@@ -6,41 +6,37 @@ import { PostMain, Author, ImageStyledContainer } from '../styles/pages/postStyl
 
 import img1 from '../../public/img1.png'
 
-export default function Home() {
+
+
+export default function Home({ post }) {
   return (
     <>
       <Header />
 
       <PostMain>
 
-        <h1>TITULO</h1>
+        <h1>{post.title}</h1>
 
-        <p>
-          O Cerrado é um bioma de formações vegetais constituído de uma união de paisagens que passam entre ecossistemas campestres, ciliares, florestais e rupestres. Possuindo uma grande biodiversidade animal e vegetal.
-        </p>
-        <p>
-          O Cerrado é um bioma de formações vegetais constituído de uma união de paisagens que passam entre ecossistemas campestres, ciliares, florestais e rupestres. Possuindo uma grande biodiversidade animal e vegetal.
-        </p>
-        <p>
-          O Cerrado é um bioma de formações vegetais constituído de uma união de paisagens que passam entre ecossistemas campestres, ciliares, florestais e rupestres. Possuindo uma grande biodiversidade animal e vegetal.
-        </p>
-        <p>
-          O Cerrado é um bioma de formações vegetais constituído de uma união de paisagens que passam entre ecossistemas campestres, ciliares, florestais e rupestres. Possuindo uma grande biodiversidade animal e vegetal.
-        </p>
-        <p>
-          O Cerrado é um bioma de formações vegetais constituído de uma união de paisagens que passam entre ecossistemas campestres, ciliares, florestais e rupestres. Possuindo uma grande biodiversidade animal e vegetal.
-        </p>
+       {post.text.split('.').map(sentence => <p>{sentence}.</p>)}
 
-        <Author>Escrito por: JORJÃO</Author>
+        <Author>Escrito por: {post.author}</Author>
 
         <ImageStyledContainer>
           <Image src={img1} layout='fill' objectFit="fill" alt='dinamic alt' />
         </ImageStyledContainer>
 
       </PostMain>
-
       <Footer />
     </>
   )
+}
+
+export async function getServerSideProps({ query }) {
+  const res = await fetch('http://localhost:3000/api/post')
+  const posts = await res.json()
+  let post = posts.find(post => post.id == query.id)
+  return {
+    props: { post }
+  }
 }
 

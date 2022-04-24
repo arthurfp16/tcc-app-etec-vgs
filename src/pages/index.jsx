@@ -7,42 +7,32 @@ import image from "../../public/img2.png"
 
 const tmpDate = '21/04/2022'
 
-const Home = () => {
+const Home = ({ posts }) => {
+
     return (
         <>
             <Header />
+
             <HomeMain>
-                <section>
-                    <Title>
-                        Destaque
-                    </Title>
-                    <PostCard
-                        title="TRATAMENTO DE EFLUENTES INDUSTRIAIS E CHORUME DE ATERRO SANITÁRIO"
-                        imgSrc={image}
-                        imgAlt='Arvore meio dia cerrado'
-                        time={tmpDate}
-                        author='batata baroa'
-                        highlighted
-                        linkHref="/post"
-                    >
-                        Determinações legais cada vez mais rígidas, o desejo de consolidar uma imagem positiva no mercado e a conscientização no que diz respeito ao devido tratamento de efluentes industriais e chorume de aterro sanitário que tem levado gestores a buscarem soluções eficazes para lidar com todos os requisitos da atividade.
-                    </PostCard>
-                </section>
-                <section>
-                    <Title>
-                        mais artigos
-                    </Title>
-                    <PostCard
-                        title="TRATAMENTO DE EFLUENTES INDUSTRIAIS E CHORUME DE ATERRO SANITÁRIO"
-                        imgSrc={image}
-                        imgAlt='Arvore meio dia cerrado'
-                        time={tmpDate}
-                        author='batata baroa'
-                        linkHref="/post"
-                    >
-                        Determinações legais cada vez mais rígidas, o desejo de consolidar uma imagem positiva no mercado e a conscientização no que diz respeito ao devido tratamento de efluentes industriais e chorume de aterro sanitário que tem levado gestores a buscarem soluções eficazes para lidar com todos os requisitos da atividade.
-                    </PostCard>
-                </section>
+            {posts.map((post) => {
+                return (
+                    <section key={post.id}>
+                        <Title>
+                            Destaques
+                        </Title>
+                        <PostCard
+                            title={post.title}
+                            imgSrc={image}
+                            imgAlt='Arvore meio dia cerrado'
+                            time={tmpDate}
+                            author={post.author}
+                            highlighted
+                            href={`/post?id=${post.id}`}>
+                            {post.text.slice(0, 400) + ' ...'}
+                        </PostCard>
+                    </section>
+                )
+            })}
             </HomeMain>
             <Footer />
         </>
@@ -50,3 +40,11 @@ const Home = () => {
 }
 
 export default Home
+
+export async function getServerSideProps() {
+    const res = await fetch('http://localhost:3000/api/post')
+    const posts = await res.json()
+    return {
+        props: { posts }
+    }
+}
