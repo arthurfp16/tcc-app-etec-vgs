@@ -27,11 +27,7 @@ const Home = ({ posts }) => {
                             time={tmpDate}
                             author={post.author}
                             highlighted
-                            href={{
-                                pathname: '/[postId]',
-                                query:  { postId: post.id}
-                            }}
-                        >
+                            href={`/post?id=${post.id}`}>
                             {post.text.slice(0, 400) + ' ...'}
                         </PostCard>
                     </section>

@@ -5,7 +5,6 @@ async function handler(req, res) {
         if(req.method == 'GET') {
             const dbPostData = await prisma.posts.findMany()
             res.status(200).json(dbPostData)
-            console.log(req)
         }
     }
     catch (err) {
