@@ -11,80 +11,35 @@ const tmpDate = '21/04/2022'
 
 const LikeCreationMenu = styled.button`
 width: 100%;
-height: 40px;
-color: #fff;
-padding: 10px 25px;
-font-family: 'Roboto', sans-serif;
-font-weight: 500;
-background: transparent;
-cursor: pointer;
-transition: all 0.3s ease;
-position: relative;
-display: inline-block;
-box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
-outline: none;
-background: linear-gradient(0deg, #264713 0%, #61aa37 100%);
-height: 40px;
-line-height: 42px;
-padding: 0;
+height: 48px;
 border: none;
-
-span {
-position: relative;
-display: block;
-width: 100%;
-height: 100%;
+outline: none;
+font-size: 18px;
+::before{
+    content: '';
+    background-color: ${props => props.theme.colors.darkGreen200};
+    height: 48px;
+    width: 100%;
+    position: absolute;
+    top:0;
+    left:-100vw;
+    transition: 0.7s all ease-in-out;
+    color: ${props => props.theme.colors.darkGreen200};
 }
-
-::before, ::after {
-position: absolute;
-content: "";
-right: 0;
-top: 0;
-background: #264713;
-transition: all 0.3s ease;
+:hover::before, :focus::before{
+    color:${props => props.theme.colors.white};
+    content: 'Ir para a pagina de criaçao';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
 }
-
-:before {
- height: 0%;
- width: 2px;
-}
-:hover, :focus {
-background: transparent;
-box-shadow: none;
-}
-:hover:before {
-height: 100%;
-}
-  
-:hover:after {
-width: 100%;
-}
-span:hover{
-color: #264713;
-}
-span:before,
-span:after {
-  position: absolute;
-  content: "";
-  left: 0;
-  bottom: 0;
-  background: #264713;
-  transition: all 0.3s ease;
-}
-span:before {
-  width: 2px;
-  height: 0%;
-}
-span:after {
-  width: 0%;
-  height: 2px;
-}
-span:hover:before {
-  height: 100%;
-}
-span:hover:after {
-  width: 100%;
+@media screen and (max-width: 768px) {
+    color:${props => props.theme.colors.white};
+    background-color: ${props => props.theme.colors.darkGreen200};
+    hover::before, :focus::before, ::before{
+        content: none;
+    }
 }
 `
 
@@ -92,7 +47,7 @@ const Home = ({ posts }) => {
 
     return (
         <>
-            <LikeCreationMenu><span>Pagina de criaçao</span></LikeCreationMenu>
+            <Link href={'/postCreationMenu'} ><LikeCreationMenu>Ir para a pagina de criação</LikeCreationMenu></Link>
             <Header />
 
             <HomeMain>
