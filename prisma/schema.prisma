@@ -12,8 +12,8 @@ datasource db {
 
 model posts {
   id Int @id @default(autoincrement())
-  author String
-  title String 
+  author String 
+  title String  
   text String 
   category String
 } 

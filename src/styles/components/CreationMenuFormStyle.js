@@ -24,7 +24,8 @@ export const Label = styled.label`
     align-items: stretch;
     text-align: start;
     margin-bottom: 10px;
-
+    word-break: keep-all;
+    
     input{
         min-height: 30px;
     }
@@ -54,3 +55,7 @@ export const textAreaAdjust = (element) => {
     element.style.height = "1px";
     element.style.height = (25 + element.scrollHeight) + "px"
 }
+
+export const ErrorText = styled.span`
+    color: red;
+`
