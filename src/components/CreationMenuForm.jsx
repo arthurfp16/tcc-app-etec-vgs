@@ -9,6 +9,7 @@ let preSubmitConter = 0
 export const CreationMenuForm = () => {
 
     const [submitValidate, setSubmitValidate] = useState(false)
+    const [isClicked, setIsClicked] = useState(false)
 
     const sendData = async (data) => {
         await fetch('http://localhost:3000/api/post', {
@@ -109,14 +110,22 @@ export const CreationMenuForm = () => {
             </Label>
 
             <div>
-                <Button
+                <Button 
+                    type="button"
                     variant='upload'
                     >
                     <Image
                         src={uploadIcon} /> Upload
                 </Button>
                 <Button
-                    type='submit'>
+                    className="submitButton"
+                    type='submit'
+                    clicked={isClicked}
+                    onMouseDown={() => {setIsClicked(!isClicked)}}
+                    onMouseUp={() => {setIsClicked(!isClicked)}}
+                    onTouchStart={() => {setIsClicked(!isClicked)}}
+                    onTouchEnd={() => {setIsClicked(!isClicked)}}
+                    >
                     Publicar
                 </Button>
                     {submitValidate ? <span>Voce tem certeza de que quer postar?</span> : null}
