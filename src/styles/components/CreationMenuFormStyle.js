@@ -34,7 +34,7 @@ export const Label = styled.label`
 export const Button = styled.button`
     width: 92px;
     height: ${props => props.variant == 'upload' ? '26px ' : '36px'};
-    box-shadow: 2px 4px 4px #00000040;
+    box-shadow: ${props => props.clicked ? 'inset 2px 4px 4px #00000040' : '2px 4px 4px #00000040'};
     background-color:  ${props => props.variant == 'upload' ? props.theme.colors.darkGreen : props.theme.colors.lightOrange};
     border: none;
     outline: none;
