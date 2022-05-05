@@ -9,6 +9,7 @@ export const Form = styled.form`
     background-color: ${props => props.theme.colors.lightGreen};
     box-shadow: 2px 4px 4px #00000040;
     max-width: 308px;
+    
     div{
         display: flex;
         flex-direction: column;

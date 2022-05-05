@@ -1,7 +1,8 @@
-import { faClock, faUser } from '@fortawesome/free-regular-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from "react"
 import styled from "styled-components"
+import Image from 'next/image'
+import authorIcon from '../../../public/User.svg'
+import timeIcon from '../../../public/Time.svg'
 
 export const PostCardContent = styled.article`
     
@@ -62,7 +63,7 @@ const TextIconContainer = styled.span`
 export const PostCardTime = ({children}) => {
     return (
         <TextIconContainer>
-            <FontAwesomeIcon icon={faClock} />
+            <Image src={timeIcon} />
             <time>{children}</time>
         </TextIconContainer>
     )
@@ -71,7 +72,7 @@ export const PostCardTime = ({children}) => {
 export const PostCardAuthor = ({children}) => {
     return (
         <TextIconContainer>
-            <FontAwesomeIcon icon={faUser} />
+            <Image src={authorIcon} /> 
             <span>{children}</span>
         </TextIconContainer>
     )
