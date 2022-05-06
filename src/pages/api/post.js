@@ -8,7 +8,7 @@ async function handler(req, res) {
         } else if (req.method == 'POST') {
             const FormData = JSON.parse(req.body)
             console.log(FormData)
-            const post = await prisma.posts.create({
+           await prisma.posts.create({
                 data: {
                     title: FormData.title,
                     category: 'none',

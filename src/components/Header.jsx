@@ -6,7 +6,7 @@ export const Header = () => {
     return (
         <HeaderContainer>
             <ImageContainer>
-                <Image src={logo} alt='logo' />
+                <Image src={logo} layout='fill' objectFit='contain' alt='logo' />
             </ImageContainer>
         </HeaderContainer>
     )

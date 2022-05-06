@@ -6,11 +6,11 @@ export const HeaderContainer = styled.header`
     align-items: center;
     justify-content: space-around;
     height: 78px;
+    padding: 10px;
 `
 
 export const ImageContainer = styled.div`
-    width: 60px;
+    position: relative;
+    width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-`
+`   
