@@ -47,17 +47,43 @@ const Home = ({ posts }) => {
 
     return (
         <>
-            <Link href={'/postCreationMenu'} ><LikeCreationMenu>Ir para a pagina de criação</LikeCreationMenu></Link>
+            <Link href={'/postCreationMenu'} >
+                <LikeCreationMenu>Ir para a pagina de criação</LikeCreationMenu>
+            </Link>
             <Header />
 
             <HomeMain>
-                {posts.map((post) => {
-                    return (
-                        <section key={post.id}>
-                            <Title>
-                                Destaques
-                            </Title>
+                <section>
+                    <Title>
+                        Destaques
+                    </Title>
+                    {
+                        posts.map((post, index) => {
+                            return (
+                                index === 1 && (
+                                    <PostCard
+                                        key={post.id}
+                                        title={post.title}
+                                        imgSrc={image}
+                                        imgAlt='Arvore meio dia cerrado'
+                                        time={tmpDate}
+                                        author={post.author}
+                                        highlighted
+                                        href={`/post?id=${post.id}`}>
+                                        {post.text.slice(0, 400) + ' ...'}
+                                    </PostCard>
+                                )
+                            )
+                        })}
+                </section>
+                <section>
+                    <Title>
+                        Mais artigos
+                    </Title>
+                    {
+                        posts.map((post, index) => index !== 1 && (
                             <PostCard
+                                key={post.id}
                                 title={post.title}
                                 imgSrc={image}
                                 imgAlt='Arvore meio dia cerrado'
@@ -66,11 +92,12 @@ const Home = ({ posts }) => {
                                 highlighted
                                 href={`/post?id=${post.id}`}>
                                 {post.text.slice(0, 400) + ' ...'}
-                            </PostCard>
-                        </section>
-                    )
-                })}
+                            </PostCard>      
+                        ))
+                    }
+                </section>
             </HomeMain>
+
             <Footer />
         </>
     )

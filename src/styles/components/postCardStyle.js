@@ -13,12 +13,13 @@ export const PostCardContent = styled.article`
 
     box-shadow: 2px 4px 4px #00000040;
     
-    display: flex;
+    display: flex ;
     flex-direction: column;
     gap: 16px;
     
     width: 100%;
-    max-width: ${props => props.highlighted ? '308px': '233px'};
+    max-width: ${props => props.highlighted ? '308px' : '233px'};
+    min-width: 233px;
 
     margin-top: 26px;
     
@@ -43,6 +44,7 @@ export const PostCardTitle = styled.h2`
 export const PostCardText = styled.p`
     width: 100%;
     text-align: left;
+    word-break: break-all;
 `
 export const CardFooter = styled.footer`
     display: flex;
@@ -60,7 +62,7 @@ const TextIconContainer = styled.span`
     text-transform: capitalize;
 `
 
-export const PostCardTime = ({children}) => {
+export const PostCardTime = ({ children }) => {
     return (
         <TextIconContainer>
             <Image src={timeIcon} />
@@ -69,13 +71,11 @@ export const PostCardTime = ({children}) => {
     )
 }
 
-export const PostCardAuthor = ({children}) => {
+export const PostCardAuthor = ({ children }) => {
     return (
         <TextIconContainer>
-            <Image src={authorIcon} /> 
+            <Image src={authorIcon} />
             <span>{children}</span>
         </TextIconContainer>
     )
 }
-
-
