@@ -48,7 +48,10 @@ export const PostCardText = styled.p`
 `
 export const CardFooter = styled.footer`
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 16px;
+    row-gap: 8px;
 `
 
 const TextIconContainer = styled.span`

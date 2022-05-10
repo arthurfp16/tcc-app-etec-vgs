@@ -43,7 +43,23 @@ font-size: 18px;
 }
 `
 
-const Home = ({ posts }) => {
+const Home = ({ posts, postHighlighted }) => {
+
+    function createPostCard(post) {
+        return (
+            <PostCard
+                key={post.id}
+                title={post.title}
+                imgSrc={image}
+                imgAlt='Arvore meio dia cerrado'
+                time={tmpDate}
+                author={post.author}
+                highlighted
+                href={`/post?id=${post.id}`}>
+                {post.text.slice(0, 400) + ' ...'}
+            </PostCard>
+        )
+    }
 
     return (
         <>
@@ -58,23 +74,8 @@ const Home = ({ posts }) => {
                         Destaques
                     </Title>
                     {
-                        posts.map((post, index) => {
-                            return (
-                                index === 1 && (
-                                    <PostCard
-                                        key={post.id}
-                                        title={post.title}
-                                        imgSrc={image}
-                                        imgAlt='Arvore meio dia cerrado'
-                                        time={tmpDate}
-                                        author={post.author}
-                                        highlighted
-                                        href={`/post?id=${post.id}`}>
-                                        {post.text.slice(0, 400) + ' ...'}
-                                    </PostCard>
-                                )
-                            )
-                        })}
+                        createPostCard(postHighlighted)
+                    }
                 </section>
                 <section>
                     <Title>
@@ -89,10 +90,9 @@ const Home = ({ posts }) => {
                                 imgAlt='Arvore meio dia cerrado'
                                 time={tmpDate}
                                 author={post.author}
-                                highlighted
                                 href={`/post?id=${post.id}`}>
                                 {post.text.slice(0, 400) + ' ...'}
-                            </PostCard>      
+                            </PostCard>
                         ))
                     }
                 </section>
@@ -108,7 +108,10 @@ export default Home
 export async function getServerSideProps() {
     const res = await fetch('http://localhost:3000/api/post')
     const posts = await res.json()
+    posts.reverse()
+    const postHighlighted = posts[0]
+    posts.shift()
     return {
-        props: { posts }
+        props: { posts, postHighlighted }
     }
 }
