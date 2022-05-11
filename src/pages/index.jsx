@@ -46,19 +46,35 @@ font-size: 18px;
 const Home = ({ posts, postHighlighted }) => {
 
     function createPostCard(post) {
-        return (
-            <PostCard
-                key={post.id}
-                title={post.title}
-                imgSrc={image}
-                imgAlt='Arvore meio dia cerrado'
-                time={tmpDate}
-                author={post.author}
-                highlighted
-                href={`/post?id=${post.id}`}>
-                {post.text.slice(0, 400) + ' ...'}
-            </PostCard>
-        )
+        try {
+            return post.map((post) => (
+                <PostCard
+                    key={post.id}
+                    title={post.title}
+                    imgSrc={image}
+                    imgAlt='Arvore meio dia cerrado'
+                    time={tmpDate}
+                    author={post.author}
+                    href={`/post?id=${post.id}`}>
+                    {post.text.slice(0, 400) + ' ...'}
+                </PostCard>
+            ))
+        }
+        catch {
+            return (
+                <PostCard
+                    key={post.id}
+                    title={post.title}
+                    imgSrc={image}
+                    imgAlt='Arvore meio dia cerrado'
+                    time={tmpDate}
+                    author={post.author}
+                    highlighted
+                    href={`/post?id=${post.id}`}>
+                    {post.text.slice(0, 400) + ' ...'}
+                </PostCard>
+            )
+        }
     }
 
     return (
@@ -82,18 +98,7 @@ const Home = ({ posts, postHighlighted }) => {
                         Mais artigos
                     </Title>
                     {
-                        posts.map((post, index) => index !== 1 && (
-                            <PostCard
-                                key={post.id}
-                                title={post.title}
-                                imgSrc={image}
-                                imgAlt='Arvore meio dia cerrado'
-                                time={tmpDate}
-                                author={post.author}
-                                href={`/post?id=${post.id}`}>
-                                {post.text.slice(0, 400) + ' ...'}
-                            </PostCard>
-                        ))
+                        createPostCard(posts)
                     }
                 </section>
             </HomeMain>
