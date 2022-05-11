@@ -17,14 +17,14 @@ export default function About() {
 
       <AboltMain>
         <ImageContainer imgSrc={img1} imgAlt='arvore nativa do cerrado num campo em um dia com poucas nuvems e sol intenso'>
-          O Cerrado é um bioma de formações vegetais constituído de uma união de paisagens que passam entre ecossistemas campestres, ciliares, florestais e rupestres. Possuindo uma grande biodiversidade animal e vegetal.
+          O Cerrado é um bioma de formações vegetais constituído de uma união de paisagens que passam entre ecossistemas campestres, ciliares, florestais e rupestres.
         </ImageContainer>
 
-        <ImageContainer imgSrc={img2} containerFlexDirection='row-reverse' imgAlt=''>
+        <ImageContainer imgSrc={img2} containerFlexDirection='row-reverse' imgAlt='campo com flora seca e uma pequna arvore do lado direito em um dia de sol intenso'> Possuindo uma grande biodiversidade animal e vegetal.
           A flora conta com aproximadamente 13 mil espécies, cada uma com  suas próprias características.
         </ImageContainer>
 
-        <ImageContainer imgSrc={img3} containerFlexDirection='column-reverse' imgAlt='the img not defined then alt is generic'>  
+        <ImageContainer imgSrc={img3} containerFlexDirection='column-reverse' imgAlt='quatro animais nativos do cerrado sendo a onça-pintada, macaco-prego, lobo-guara, tatu-canastra.'>  
           Em relação a fauna, o cerrado é reconhecido pela riquíssima concentração de mamíferos de médio porte, aves e incetos.
         </ImageContainer>
 
