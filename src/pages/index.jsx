@@ -7,8 +7,6 @@ import { Footer } from "../components/Footer.jsx"
 
 import image from "../../public/img2.png"
 
-const tmpDate = '21/04/2022'
-
 const LikeCreationMenu = styled.button`
 width: 100%;
 height: 48px;
@@ -53,7 +51,7 @@ const Home = ({ posts, postHighlighted }) => {
                     title={post.title}
                     imgSrc={image}
                     imgAlt='Arvore meio dia cerrado'
-                    time={tmpDate}
+                    time={post.createdAt}
                     author={post.author}
                     href={`/post?id=${post.id}`}>
                     {post.text.slice(0, 400) + ' ...'}
@@ -67,7 +65,7 @@ const Home = ({ posts, postHighlighted }) => {
                     title={post.title}
                     imgSrc={image}
                     imgAlt='Arvore meio dia cerrado'
-                    time={tmpDate}
+                    time={post.createdAt}
                     author={post.author}
                     highlighted
                     href={`/post?id=${post.id}`}>

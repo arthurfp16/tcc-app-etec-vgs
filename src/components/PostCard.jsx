@@ -3,6 +3,8 @@ import { PostCardContent, PostCardText, PostCardTime, PostCardTitle, PostCardAut
 import Link from 'next/link'
 
 export const PostCard = ({ href = './', imgSrc, imgAlt, title, time, author, children, highlighted = null }) => {
+    const dateTime = new Date(time)
+    const dateTimeFormat = dateTime.toLocaleDateString()
     return (
         <Link href={href}>
             <PostCardContent highlighted={highlighted}>
@@ -11,7 +13,7 @@ export const PostCard = ({ href = './', imgSrc, imgAlt, title, time, author, chi
                     <PostCardTitle>{title}</PostCardTitle>
                     <PostCardText>{children}</PostCardText>
                     <CardFooter>
-                        <PostCardTime dateTime={time.replaceAll('/', '-')} >{time}</PostCardTime>
+                        <PostCardTime dateTime={dateTime} >{dateTimeFormat}</PostCardTime>
                         <PostCardAuthor>{String(author).toLowerCase()}</PostCardAuthor>
                     </CardFooter>
                 </div>
