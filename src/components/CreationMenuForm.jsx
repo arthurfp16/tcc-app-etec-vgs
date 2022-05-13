@@ -114,8 +114,7 @@ export const CreationMenuForm = () => {
                     type="button"
                     variant='upload'
                     >
-                    <Image
-                        src={uploadIcon} /> Upload
+                    <Image src={uploadIcon} alt='Icone enviar imagem.' /> Upload
                 </Button>
                 <Button
                     className="submitButton"

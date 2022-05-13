@@ -17,7 +17,7 @@ export default function Home({ post }) {
 
         <h1>{post.title}</h1>
 
-       {post.text.split('.').map(sentence => <p>{sentence}.</p>)}
+       {post.text.split('.').map((sentence, index) => <p key={index}>{sentence}.</p>)}
 
         <Author>Escrito por: {post.author}</Author>
 
