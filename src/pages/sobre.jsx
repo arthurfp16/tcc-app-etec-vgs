@@ -1,5 +1,4 @@
 import { Header } from "../components/Header"
-import { MotivationalPhrase } from "../components/motivationalPhrase"
 import { Footer } from "../components/Footer"
 import Image from 'next/image'
 import styled from 'styled-components'
