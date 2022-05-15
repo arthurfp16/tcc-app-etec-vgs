@@ -6,8 +6,6 @@ import { PostMain, Author, ImageStyledContainer } from '../styles/pages/postStyl
 
 import img1 from '../../public/img1.png'
 
-
-
 export default function Home({ post }) {
   return (
     <>
@@ -32,7 +30,7 @@ export default function Home({ post }) {
 }
 
 export async function getServerSideProps({ query }) {
-  const res = await fetch('http://localhost:3000/api/post')
+  const res = await fetch('https://tcc-app-etec-vgs.vercel.app/api/post')
   const posts = await res.json()
   let post = posts.find(post => post.id == query.id)
   return {

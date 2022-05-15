@@ -108,7 +108,7 @@ const Home = ({ posts, postHighlighted }) => {
 export default Home
 
 export async function getServerSideProps() {
-    const res = await fetch('http://localhost:3000/api/post')
+    const res = await fetch('https://tcc-app-etec-vgs.vercel.app/api/post')
     const posts = await res.json()
     posts.reverse()
     const postHighlighted = posts[0]

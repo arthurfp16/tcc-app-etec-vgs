@@ -12,7 +12,7 @@ export const CreationMenuForm = () => {
     const [isClicked, setIsClicked] = useState(false)
 
     const sendData = async (data) => {
-        await fetch('http://localhost:3000/api/post', {
+        await fetch('https://tcc-app-etec-vgs.vercel.app/api/post', {
             method: 'POST',
             body: JSON.stringify(data)
         })
