@@ -74,7 +74,6 @@ const Home = ({ posts, postHighlighted }) => {
             )
         }
     }
-
     return (
         <>
             <Link href={'/postCreationMenu'} >
