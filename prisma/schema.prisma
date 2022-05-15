@@ -6,8 +6,8 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider = "postgresql"
+  url      = "postgres://eamejahtltuepa:641cc84ce48db9b16ba8283287c07144793547eff0e8b137d14c3e718f16ba9e@ec2-54-165-184-219.compute-1.amazonaws.com:5432/d9du8g7f5bu0i8"
 }
 
 model posts {
@@ -17,10 +17,4 @@ model posts {
   text String 
   category String
   createdAt DateTime @default(now())
-} 
-
-model login {
-  id Int @id @default(autoincrement())
-  user String
-  password String
 }
