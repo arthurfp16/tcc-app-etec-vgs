@@ -3,9 +3,12 @@ import styled from "styled-components"
 export const Form = styled.form`
     width: 100%;
     height: fit-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     padding: 26px 36px;
     text-align: center;
-    margin: 41px auto auto auto;
     background-color: ${props => props.theme.colors.lightGreen};
     box-shadow: 2px 4px 4px #00000040;
     max-width: 308px;

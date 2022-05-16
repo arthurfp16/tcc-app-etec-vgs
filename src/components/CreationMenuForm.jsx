@@ -4,6 +4,7 @@ import { Form, Label, Button, TextArea, textAreaAdjust, ErrorText } from '../sty
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
 import { useState } from 'react'
+import Router from 'next/router'
 let preSubmitConter = 0
 
 export const CreationMenuForm = () => {
@@ -15,7 +16,7 @@ export const CreationMenuForm = () => {
         await fetch('https://tcc-app-etec-vgs.vercel.app/api/post', {
             method: 'POST',
             body: JSON.stringify(data)
-        })
+        }).finally(() => Router.push('/thank'))
     }
 
     const { register, handleSubmit, formState: { errors } } = useForm()

@@ -4,10 +4,10 @@ import { CreationMenuForm } from "../components/CreationMenuForm.jsx"
 
 const Home = () => {
     return (
-        <>
+        <>  
             <Header />
             <CreationMenuForm />
-            <Footer />
+            <Footer />   
         </>
     )
 }

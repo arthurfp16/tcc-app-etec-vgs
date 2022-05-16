@@ -5,6 +5,7 @@ import { HomeMain, Title } from "../styles/pages/homeStyled"
 import { PostCard } from "../components/PostCard"
 import { Footer } from "../components/Footer.jsx"
 
+
 import image from "../../public/img2.png"
 
 const LikeCreationMenu = styled.button`
