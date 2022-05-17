@@ -11,7 +11,12 @@ export const PostMain = styled.main`
 
   p {
     margin-top: 16px;
+    word-break: break-all;
   }
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   
 `
 export const Author = styled.span`
@@ -23,6 +28,6 @@ export const Author = styled.span`
 export const ImageStyledContainer = styled.div`
   position: relative;
   width: 100%;
-  height: 120px;
+  height: 200px;
   margin-top: 26px;
 `

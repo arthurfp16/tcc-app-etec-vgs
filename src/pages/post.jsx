@@ -4,7 +4,7 @@ import { Header } from "../components/Header"
 import { Footer } from "../components/Footer"
 import { PostMain, Author, ImageStyledContainer } from '../styles/pages/postStyle.js'
 
-import img1 from '../../public/img1.png'
+import img1 from '../../public/img3.png'
 
 export default function Home({ post }) {
   return (
@@ -20,7 +20,7 @@ export default function Home({ post }) {
         <Author>Escrito por: {post.author}</Author>
 
         <ImageStyledContainer>
-          <Image src={img1} layout='fill' objectFit="fill" alt='dinamic alt' />
+          <Image src={img1} layout='fill' objectFit="contain" alt='dinamic alt' />
         </ImageStyledContainer>
 
       </PostMain>
