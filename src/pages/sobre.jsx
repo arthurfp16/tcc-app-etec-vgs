@@ -51,7 +51,7 @@ export default function About() {
       <AboutMain>
 
         <div className="image-container image-container--left">
-          <span class='image'>
+          <span className='image'>
             <Image
               src={img1}
               objectFit="contain"
@@ -65,7 +65,7 @@ export default function About() {
         </div>
 
         <div className="image-container image-container--rigth">
-          <span class='image'>
+          <span className='image'>
             <Image
               src={img2}
               objectFit="contain"
@@ -83,7 +83,7 @@ export default function About() {
           <p>
             Em relação a fauna, o cerrado é reconhecido pela riquíssima concentração de mamíferos de médio porte, aves e incetos.
           </p>
-          <span class='image'>
+          <span className='image'>
             <Image
               src={img3}
               objectFit="contain"
