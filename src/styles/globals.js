@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
   padding: 0;
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  background-color: #F1F1F1;
+  background-color: #d5d5d5;
 }
 
 a {
@@ -22,6 +22,8 @@ a {
 main{
   margin-bottom: 93px;
   padding: 0px 26px;
+  max-width: 720px;
+  margin: 0 auto;
 }
 `
 

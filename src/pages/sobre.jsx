@@ -11,6 +11,7 @@ const AboutMain = styled.main`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: ${props => props.theme.colors.white100};
   gap: 42px;
   padding-top: 42px;
 
