@@ -16,7 +16,6 @@ export const FooterContainer = styled.footer`
     justify-content: space-around;
     
     width: 100%;
-    max-height: 52px; 
     
     position: fixed;
     bottom: 0px;
@@ -29,7 +28,7 @@ export const IconLink = ({ href, imgSrc, imgAlt, dissable= "false" }) => {
     return (
         <Link href={href}>
             <ImageContainer dissable={dissable}>
-                <Image src={imgSrc} alt={imgAlt}  />
+                <Image src={imgSrc}  height={45} width={45} alt={imgAlt}  />
             </ImageContainer>
         </Link>
     )

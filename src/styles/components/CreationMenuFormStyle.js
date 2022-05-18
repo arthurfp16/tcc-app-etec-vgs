@@ -2,7 +2,6 @@ import styled from "styled-components"
 
 export const Form = styled.form`
     width: 100%;
-    height: fit-content;
     position: absolute;
     top: 50%;
     left: 50%;
