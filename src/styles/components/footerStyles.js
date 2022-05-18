@@ -22,14 +22,20 @@ export const FooterContainer = styled.footer`
     z-index: 1;
     
     padding: 10px 0px;
+    div{
+        width: 50%;
+        text-align: center;
+    }
 `
 
-export const IconLink = ({ href, imgSrc, imgAlt, dissable= "false" }) => {
+export const IconLink = ({ href, imgSrc, imgAlt, dissable = "false" }) => {
     return (
         <Link href={href}>
-            <ImageContainer dissable={dissable}>
-                <Image src={imgSrc}  height={45} width={45} alt={imgAlt}  />
-            </ImageContainer>
+            <div>
+                <ImageContainer dissable={dissable}>
+                    <Image src={imgSrc} height={45} width={45} alt={imgAlt} />
+                </ImageContainer>
+            </div>
         </Link>
     )
 }
