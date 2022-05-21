@@ -20,10 +20,10 @@ a {
 }
 
 main{
-  margin-bottom: 93px;
-  padding: 0px 26px;
-  max-width: 720px;
   margin: 0 auto;
+  padding: 0px 26px;
+  padding-bottom: calc(69px + 48px);
+  max-width: 720px;
 }
 `
 
