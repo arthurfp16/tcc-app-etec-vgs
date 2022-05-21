@@ -2,22 +2,23 @@ import styled from "styled-components"
 
 export const Form = styled.form`
     width: 100%;
+    height: calc(100% - 96px);
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 26px 36px;
+    padding: 68px 36px;
     text-align: center;
     background-color: ${props => props.theme.colors.lightGreen};
     box-shadow: 2px 4px 4px #00000040;
-    max-width: 308px;
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    @media screen and (max-height: 530px) {
+        height: 110%;
+    }
     div{
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 41px;
-        margin-top: 26px;
     }
 `
 
@@ -51,11 +52,12 @@ export const Button = styled.button`
 
 export const TextArea = styled.textarea`
     resize: none;
+    height: 60px;
     overflow:hidden;
 `
 
 export const textAreaAdjust = (element) => {
-    element.style.height = "1px";
+    element.style.height = "60px";
     element.style.height = (25 + element.scrollHeight) + "px"
 }
 
