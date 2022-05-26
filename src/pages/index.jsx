@@ -4,7 +4,7 @@ import { Header } from "../components/Header"
 import { HomeMain, Title } from "../styles/pages/homeStyled"
 import { PostCard } from "../components/PostCard"
 import { Footer } from "../components/Footer.jsx"
-
+import Head from 'next/head'
 
 import image from "../../public/img2.png"
 
@@ -55,7 +55,7 @@ const Home = ({ posts, postHighlighted }) => {
                     time={post.createdAt}
                     author={post.author}
                     href={`/post?id=${post.id}`}>
-                    {post.text.slice(0, 400) + ' ...'}
+                    {post.text.slice(0, 250) + ' ...'}
                 </PostCard>
             ))
         }
@@ -70,13 +70,18 @@ const Home = ({ posts, postHighlighted }) => {
                     author={post.author}
                     highlighted
                     href={`/post?id=${post.id}`}>
-                    {post.text.slice(0, 400) + ' ...'}
+                    {post.text.slice(0, 250) + ' ...'}
                 </PostCard>
             )
         }
     }
     return (
         <>
+            <Head>
+                <title>
+                    Home | Cerrado vgs
+                </title>
+            </Head>
             <Link href={'/postCreationMenu'} >
                 <LikeCreationMenu>Ir para a pagina de criação</LikeCreationMenu>
             </Link>

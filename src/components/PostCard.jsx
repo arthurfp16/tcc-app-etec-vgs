@@ -13,8 +13,8 @@ export const PostCard = ({ href = './', imgSrc, imgAlt, title, time, author, chi
                     <PostCardTitle>{title}</PostCardTitle>
                     <PostCardText>{children}</PostCardText>
                     <CardFooter>
-                        <PostCardTime dateTime={dateTime} >{dateTimeFormat}</PostCardTime>
-                        <PostCardAuthor>{String(author).toLowerCase()}</PostCardAuthor>
+                        <PostCardTime dateTime={dateTime} imgAlt='simbulo relogio'>{dateTimeFormat}</PostCardTime>
+                        <PostCardAuthor imgAlt='simbolo pessoa' >{String(author).toLowerCase()}</PostCardAuthor>
                     </CardFooter>
                 </div>
             </PostCardContent>

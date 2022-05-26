@@ -1,6 +1,6 @@
 import Image from "next/image"
 import uploadIcon from '../../public/upload.svg'
-import { Form, Label, Button, TextArea, textAreaAdjust, ErrorText } from '../styles/components/CreationMenuFormStyle'
+import { Form, Label, Button, TextArea, ErrorText } from '../styles/components/CreationMenuFormStyle'
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
 import { useState } from 'react'
@@ -68,7 +68,6 @@ export const CreationMenuForm = () => {
             <Label htmlFor="text">
                 Texto:
                 <TextArea
-                    onKeyDown={(event) => { textAreaAdjust(event.target) }}
                     id="text"
                     {...register('text', {
                         required: "Este campo não pode estar vazio",

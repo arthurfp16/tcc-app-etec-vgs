@@ -53,13 +53,9 @@ export const Button = styled.button`
 export const TextArea = styled.textarea`
     resize: none;
     height: 60px;
-    overflow:hidden;
+    overflow: scroll;
+    
 `
-
-export const textAreaAdjust = (element) => {
-    element.style.height = "60px";
-    element.style.height = (25 + element.scrollHeight) + "px"
-}
 
 export const ErrorText = styled.span`
     color: red;

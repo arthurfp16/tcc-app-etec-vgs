@@ -33,7 +33,7 @@ export const IconLink = ({ href, imgSrc, imgAlt, dissable = "false" }) => {
         <Link href={href}>
             <div>
                 <ImageContainer dissable={dissable}>
-                    <Image src={imgSrc} height={45} width={45} alt={imgAlt} />
+                    <Image src={imgSrc} height={35} width={35} alt={imgAlt} />
                 </ImageContainer>
             </div>
         </Link>
