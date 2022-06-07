@@ -76,13 +76,13 @@ export default function About() {
           </span>
           <p>
             Possuindo uma grande biodiversidade animal e vegetal.
-            A flora conta com aproximadamente 13 mil espécies, cada uma com  suas próprias características.
+            A flora conta com aproximadamente 13 mil espécies, cada uma com suas próprias características.
           </p>
         </div>
 
         <div className="image-container">
           <p>
-            Em relação a fauna, o cerrado é reconhecido pela riquíssima concentração de mamíferos de médio porte, aves e incetos.
+            Em relação a fauna, o cerrado é reconhecido pela riquíssima concentração de mamíferos de médio porte, aves e insetos.
           </p>
           <span className='image'>
             <Image
@@ -94,7 +94,7 @@ export default function About() {
 
           </span>
           <p>
-            Com tudo isso o cerrado é repleto de interações estas comprendem desde as relações alimentares, medicina popular, religiosas, habitações(antigamente), conhecimentos tradicionais(cultura), e identidade para com a paisagem.
+            Com tudo isso o cerrado é repleto de interações estas compreendem desde as relações alimentares, medicina popular, religiosas, habitações(antigamente), conhecimentos tradicionais(cultura), e identidade para com a paisagem.
           </p>
         </div>
 
